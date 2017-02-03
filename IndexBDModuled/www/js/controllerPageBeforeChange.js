@@ -2,7 +2,7 @@
 
 //  Antes de cargar la pantalla, analiza la ventana a mostrar al usuario y determina los datos a obtener de base de datos.
 var StateMachineModule = (function () {
-    jobBindings = function (JobName) {
+    jobBindings = function (JobID) {
         // 1: Ejecución antes de que se haya cargado la página, previo a mostrar la lista de elementos al usuario
         $(document).on('pagebeforechange', function (e, data) {
             // Obtenemos la página a la que nos dirigimos

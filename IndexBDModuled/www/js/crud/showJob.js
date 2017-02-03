@@ -20,26 +20,29 @@
             // Obtener los detalles de elemento
             var JobRec = JobObj[n];
             // Vaciar la llave primiaria
-            var pkey = JobRec.JobName;
-            pkey = pkey.split('-').join(' ');
-            JobRec.JobName = pkey;
+            var pkey = JobRec.JobID;
+            pkey = pkey.split(' ').join('-');
+            //if (pkey.contains("-")) {
+                //pkey = pkey.split(' ').join('-');
+            //}
+            JobRec.JobID = pkey;
             // Definir una nueva lína de la información obtenida
             var nItem = getJobLi();
             nItem = nItem.replace(/Z2/g, n);
             // Actualizar el  título, puede que sea multilínea
             var nTitle = '';
             // Asignar un título vacío
-            nTitle = n.split('-').join(' ');
+            //nTitle = n.split('-').join(' ');
             // Reemplazar el título
             nItem = nItem.replace(/Z1/g, nTitle);
             // Contador númerico de la película
             var nCountBubble = '';
-            nCountBubble += JobRec.JobYear;
+            nCountBubble += JobRec.JobCompany;
             // reemplazar el contador de elemntos 
             nItem = nItem.replace(/COUNTBUBBLE/g, nCountBubble);
             // Actualizr la vista en cado de existir descripción
             var nDescription = '';
-            nDescription += JobRec.JobGenre;
+            nDescription += JobRec.JobPosition;
             // Reemplazar la descripción
             nItem = nItem.replace(/DESCRIPTION/g, nDescription);
             html += nItem;

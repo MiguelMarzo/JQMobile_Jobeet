@@ -103,16 +103,20 @@
         <div id="pgAddJobCnt" data-role="content">
             <h3>Añadir Ofertas</h3><div id="pgAddJobForm">
                 <div data-role="fieldcontain">
-                    <label for="pgAddJobJobName">Nombre película<span class='red'>*</span></label>
-                    <input required name="pgAddJobJobName" title="Introduce el nombre aquí." type="text" id="pgAddJobJobName" placeholder="Introduce el nombre aquí." autocomplete="off" data-clear-btn="true"></input>
+                    <label for="pgAddJobID">ID oferta<span class='red'>*</span></label>
+                    <input required name="pgAddJobID" title="Introduce el nombre aquí." type="text" id="pgAddJobID" autocomplete="off" data-clear-btn="true"></input>
                 </div>
                 <div data-role="fieldcontain">
-                    <label for="pgAddJobJobYear">Año película<span class='red'>*</span></label>
-                    <input required name="pgAddJobJobYear" title="Introduce el año aquí." type="text" id="pgAddJobJobYear" placeholder="Introduce el año aquí." autocomplete="off" data-clear-btn="true"></input>
+                    <label for="pgAddJobCompany">Compañía<span class='red'>*</span></label>
+                    <input required name="pgAddJobCompany" title="Introduce el año aquí." type="text" id="pgAddJobCompany" autocomplete="off" data-clear-btn="true"></input>
                 </div>
                 <div data-role="fieldcontain">
-                    <label for="pgAddJobJobGenre">Género película<span class='red'>*</span></label>
-                    <input required name="pgAddJobJobGenre" title="Introduce el género aquí." type="text" id="pgAddJobJobGenre" placeholder="Introduce el género aquí." autocomplete="off" data-clear-btn="true"></input>
+                    <label for="pgAddJobPosition">Cargo<span class='red'>*</span></label>
+                    <input required name="pgAddJobPosition" title="Introduce el género aquí." type="text" id="pgAddJobPosition" placeholder="" autocomplete="off" data-clear-btn="true"></input>
+                </div>
+                <div data-role="fieldcontain">
+                    <label for="pgAddJobAddress">Direccion empresa<span class='red'>*</span></label>
+                    <input required name="pgAddJobAddress" title="Introduce el género aquí." type="text" id="pgAddJobAddress" autocomplete="off" data-clear-btn="true"></input>
                 </div>
             </div>
         </div>
@@ -131,7 +135,7 @@
         </footer>
     </div>
     <!-- Pantalla para la edición de Ofertas -->
-    <div data-url="JobName" id="pgEditJob" data-role="page">
+    <div data-url="JobID" id="pgEditJob" data-role="page">
         <div data-position="left" data-display="overlay" data-position-fixed="true" id="pgEditJobLeftPnl" data-role="panel">
             <ul data-role="listview" id="pgEditJobLeftPnlLV">
                 <li><a data-transition="slide" href="#pgJob" class="ui-btn ui-icon-carat-l ui-btn-icon-left">Back</a></li>
@@ -148,20 +152,23 @@
         <div id="pgEditJobCnt" data-role="content">
             <h3>Editar Oferta</h3><div id="pgEditJobForm">
                 <div data-role="fieldcontain">
-                    <label for="pgEditJobJobName">Nombre película<span class='red'>*</span></label>
-                    <input required readonly="readonly" data-clear-btn="true" autofocus="true" name="pgEditJobJobName" title="Introduce el nombre aquí." type="text" id="pgEditJobJobName" placeholder="Introduce el nombre aquí." autocomplete="off"></input>
+                    <label for="pgEditJobID">ID oferta<span class='red'>*</span></label>
+                    <input required readonly="readonly" data-clear-btn="true" name="pgEditJobJobID" id="pgEditJobID" autocomplete="off">
                 </div>
                 <div data-role="fieldcontain">
-                    <label for="pgEditJobJobYear">Año película<span class='red'>*</span></label>
-                    <input required name="pgEditJobJobYear" title="Introduce el año aquí." type="text" id="pgEditJobJobYear" placeholder="Introduce el año aquí." autocomplete="off" data-clear-btn="true"></input>
+                    <label for="pgEditJobCompany">Compañìa<span class='red'>*</span></label>
+                    <input required name="pgEditJobCompany" id="pgEditJobCompany" autocomplete="off" data-clear-btn="true">
                 </div>
                 <div data-role="fieldcontain">
-                    <label for="pgEditJobJobGenre">Genero película<span class='red'>*</span></label>
-                    <input required name="pgEditJobJobGenre" title="Introduce el género aquí." type="text" id="pgEditJobJobGenre" placeholder="Introduce el género aquí." autocomplete="off" data-clear-btn="true"></input>
+                    <label for="pgEditJobPosition">Cargo<span class='red'>*</span></label>
+                    <input required name="pgEditJobPosition" id="pgEditJobPosition"autocomplete="off" data-clear-btn="true">
+                </div>
+                <div data-role="fieldcontain">
+                    <label for="pgEditJobAddress">Dirección<span class='red'>*</span></label>
+                    <input required name="pgEditJobAddress" id="pgEditJobAddress" autocomplete="off" data-clear-btn="true">
                 </div>
             </div>
         </div>
-
         <footer id="pgEditJobFtr" data-role="footer" data-position="fixed" data-tap-toggle="false">
             <div id="pgEditJobFtrNavBar" data-role="navbar">
                 <ul>

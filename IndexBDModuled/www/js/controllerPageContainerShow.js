@@ -24,7 +24,6 @@ $(function () {
             e.stopImmediatePropagation();
             // Volver a la pantalla de listado de elementos
             $.mobile.changePage('#pgJob', { transition: getTransitionMode() });
-
         });
         // FIN NAV Vuelta atrás
         // INI NAV Guardar
@@ -50,7 +49,7 @@ $(function () {
             e.preventDefault();
             e.stopImmediatePropagation();
             // Obtener el enlace pulsado desde la lista de elementos y formatearlo
-            var href = $(this).data('id');
+            var href = $(this).data('id').toString();
             href = href.split(' ').join('-');
             // Almacenar el id del elemento para su edición 
             $('#pgEditJob').data('id', href);
@@ -100,15 +99,15 @@ $(function () {
             e.preventDefault();
             e.stopImmediatePropagation();
             // Lectura del identificador del elemento seleccionado por el usuario
-            var JobName = $('#pgEditJobJobName').val().trim();
+            var JobID = $('#pgEditJobID').val();
             // INI :: Mostrar mensaje de confirmación
             $('#msgboxheader h1').text('Confirm Delete');
-            $('#msgboxtitle').text(JobName.split('-').join(' '));
+            $('#msgboxtitle').text(JobID.split('-').join(' '));
             $('#msgboxprompt').text('Are you sure that you want to delete this job? This action cannot be undone.');
             $('#msgboxyes').data('method', 'deleteJob');
             $('#msgboxno').data('method', 'edit');
-            $('#msgboxyes').data('id', JobName.split(' ').join('-'));
-            $('#msgboxno').data('id', JobName.split(' ').join('-'));
+            $('#msgboxyes').data('id', JobID.split(' ').join('-'));
+            $('#msgboxno').data('id', JobID.split(' ').join('-'));
             $('#msgboxyes').data('topage', 'pgEditJob');
             $('#msgboxno').data('topage', 'pgEditJob');
             $.mobile.changePage('#msgbox', { transition: 'pop' });

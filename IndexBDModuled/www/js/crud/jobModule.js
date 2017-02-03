@@ -21,9 +21,9 @@ var JobModule = (function () {
         // Limpiar la página de contenido
         EditModule.clear();
         //  Cargar de los elementos del menú
-        var JobName = $('#pgEditJob').data('id');
+        var JobID = $('#pgEditJob').data('id');        
         // Lectura de los elementos desde la base de datos y refresco de la pantalla
-        EditModule.edit(JobName);
+        EditModule.edit(JobID);
     };
     var updateJob = function (job) {
         // Actualzar los valores del registro

@@ -12,9 +12,9 @@
             html: ""
         });
         // Limpiar el identificador almacenado con anterioridad
-        var JobName = JobRec.JobName;
-        JobName = JobName.split(' ').join('-');
-        JobRec.JobName = JobName;
+        var JobID = JobRec.JobID;
+        JobID = JobID.split(' ').join('-');
+        JobRec.JobID = JobID;
         // Guardar el objeto JSON en la base de datos
         // definir la transacción a ejecutar
         // TODO REVISE obtener el tipo de transición global
@@ -50,17 +50,19 @@
     // - Borrado de la pantalla: Realiza el borrado de los elementos mostrados en el formulario al usuario
     // - Obtener valores de la pantalla: Realiza la lectura de los elementos introducidos en el formulario por el usuario
     function pgAddJobClear() {
-        $('#pgAddJobJobName').val('');
-        $('#pgAddJobJobYear').val('');
-        $('#pgAddJobJobGenre').val('');
+        $('#pgAddJobID').val('');
+        $('#pgAddJobCompany').val('');
+        $('#pgAddJobPosition').val('');
+        $('#pgAddJobAddress').val('');
     };
     // Obtiene el contenido y genera un objeto para su almacenamiento
     function pgAddJobGetRec() {
         //define the new record
         var JobRec = {};
-        JobRec.JobName = $('#pgAddJobJobName').val().trim();
-        JobRec.JobYear = $('#pgAddJobJobYear').val().trim();
-        JobRec.JobGenre = $('#pgAddJobJobGenre').val().trim();
+        JobRec.JobID = $('#pgAddJobID').val().trim();
+        JobRec.JobCompany = $('#pgAddJobCompany').val().trim();
+        JobRec.JobPosition = $('#pgAddJobPosition').val().trim();
+        JobRec.JobAddress = $('#pgAddJobAddress').val().trim();
         return JobRec;
     };
     // FIN ALMACENAR NUEVO ELMENTO DE IndexedDB
@@ -126,9 +128,9 @@
             // obtenemos los detalles del registro
             var JobRec = JobObj[n];
             // limpiamos la clave primaria
-            var pkey = JobRec.JobName;
-            pkey = pkey.split('-').join(' ');
-            JobRec.JobName = pkey;
+            var pkey = JobRec.JobID;
+            pkey = pkey.split(' ').join('-');
+            JobRec.JobID = pkey;
             // definimos una nueva lína para el nuevo elemento
             var nItem = getJobLiRi();
             nItem = nItem.replace(/Z2/g, n);

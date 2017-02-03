@@ -23,8 +23,8 @@
                 var store = null;
                 // Generación de las tablas necesarias para la base de datos
                 if (!thisDB.objectStoreNames.contains("Job")) {
-                    // Generación de la clave primaria (objeto almacenado) accesible a traves de JobName
-                    store = thisDB.createObjectStore("Job", { keyPath: "JobName" });
+                    // Generación de la clave primaria (objeto almacenado) accesible a traves de JobID
+                    store = thisDB.createObjectStore("Job", { keyPath: "JobID" });
                 }
             };
             // Conexión exitosa con la base de datos
