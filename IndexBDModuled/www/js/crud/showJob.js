@@ -22,9 +22,6 @@
             // Vaciar la llave primiaria
             var pkey = JobRec.JobID;
             pkey = pkey.split(' ').join('-');
-            //if (pkey.contains("-")) {
-                //pkey = pkey.split(' ').join('-');
-            //}
             JobRec.JobID = pkey;
             // Definir una nueva lína de la información obtenida
             var nItem = getJobLi();
